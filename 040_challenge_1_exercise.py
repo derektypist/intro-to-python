@@ -30,7 +30,12 @@ print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+  # Filter words longer than 10 characters and don't contain a hyphen
+  unhyphenated_long_words = list(filter(lambda word: len(word) > 10 and "-" not in word, words))
+  # Map the words - include ellipsis if word length is over 15 characters
+  unhyphenated_long_words_mapped = list(map(lambda word: f"{word[0:15]}..." if len(word) > 15 else word, unhyphenated_long_words))
+  # Convert the mapped words into a string
+  return f"These words are quite long: {", ".join(unhyphenated_long_words_mapped)}"
 
 check_that_these_are_equal(
   report_long_words([
