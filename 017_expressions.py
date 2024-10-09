@@ -101,7 +101,7 @@ add_one(add_one(add_one(add_one(add_one(add_one(1))))))
 
 # EXPRESSIONS PLAYGROUND BEGINS
 
-
+print((6*5) ** (4-1))
 
 # EXPRESSIONS PLAYGROUND ENDS
 
