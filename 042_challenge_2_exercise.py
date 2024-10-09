@@ -41,6 +41,9 @@ def play_game():
     # We then need to convert it to a number using `int`
     row = int(input("Enter a row: "))
     column = int(input("Enter a column: "))
+    if not (is_move_valid(board,row,column)):
+      print("Invalid move!")
+      continue
     board = make_move(board, row, column, player)
     if player == "X":
       player = "O"
@@ -107,6 +110,10 @@ def is_game_over(board):
         return True # We found a winning row!
         # Note that return also stops the function
   return False # If we get here, we didn't find a winning row
+
+def is_move_valid(board,row,column):
+  pass
+
 
 # And test it out:
 
