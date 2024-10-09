@@ -37,7 +37,8 @@ print("Function: only_positive_numbers")
 
 # Return a new list with only the positive numbers
 def only_positive_numbers(numbers):
-  pass
+  positive_numbers = list(filter(lambda number: number >=0, numbers))
+  return positive_numbers
 
 check_that_these_are_equal(
   only_positive_numbers([-4, 4, -3, 3]), [4, 3])
