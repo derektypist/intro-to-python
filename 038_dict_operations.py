@@ -48,7 +48,7 @@ print(letter_counts)
 
 # letter_counts = {}
 # for letter in text:
-#   letter_counts[letter] = letter_counts[letter] + 1
+# letter_counts[letter] = letter_counts[letter] + 1
 
 # In the assignment above, our right hand expression tries
 # to access the value for a key that has not been added yet.
@@ -67,7 +67,13 @@ print("Function: count_words_by_length")
 # Since there are two words of length 3, etc.
 
 def count_words_by_length(words):
-  pass
+  word_counts = {}
+  for word in words:
+    if len(word) not in word_counts:
+      word_counts[len(word)] = 1
+    else:
+      word_counts[len(word)] += 1
+  return word_counts
 
 check_that_these_are_equal(
   count_words_by_length(["hat", "cat", "I", "bird"]),
