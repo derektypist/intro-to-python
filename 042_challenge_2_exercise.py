@@ -101,6 +101,8 @@ groups_to_check = [
 ]
 
 def is_game_over(board):
+  if is_game_draw(board):
+    return True
   # We go through our groups
   for group in groups_to_check:
     # If any of them are empty, they're clearly not a
@@ -112,8 +114,14 @@ def is_game_over(board):
   return False # If we get here, we didn't find a winning row
 
 def is_move_valid(board,row,column):
-  pass
+  return board[row][column] == "."
 
+
+def is_game_draw(board):
+  for row in board:
+    if "." in row:
+      return False
+  return True
 
 # And test it out:
 
